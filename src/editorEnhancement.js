@@ -1,10 +1,3 @@
-/**
- * eidtorEnhancement.js by Mr.Raindrop 2015-02-04
- * use keyboard shortcuts for typecho post & page editor.
- * ctrl+s : save draft
- * ctrl+Enter : publish post
- *
- **/
 $(function() {
     var _lock = false,
         _lockTime = 0.1,  // lock for 0.1 second
