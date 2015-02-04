@@ -23,6 +23,10 @@ module.exports = function(grunt) {
                 cwd: 'src/',
                 src: '*.php',
                 dest: 'dist/<%= pkg.title %>/'
+            },
+            readme: {
+                src: 'README.md',
+                dest: 'dist/'
             }
         }
     });
