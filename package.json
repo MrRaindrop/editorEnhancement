@@ -6,7 +6,7 @@
 	"author": "Mr.Raindrop",
 	"license": {
         "type": "MIT",
-        "url": "https://github.com/MrRaindrop/editorEnhancement/LICENSE"
+        "url": "https://github.com/MrRaindrop/editorEnhancement/blob/master/LICENSE"
     },
 	"devDependencies": {
 		"grunt": "~0.4.5",
