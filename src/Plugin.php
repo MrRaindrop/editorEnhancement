@@ -1,7 +1,7 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * 为默认文本编辑器提供增强功能
+ * EditorEnhancement
  * 
  * @package EditorEnhancement 
  * @author Mr.Raindrop
@@ -19,7 +19,7 @@ class EditorEnhancement_Plugin implements Typecho_Plugin_Interface
      */
     public static function activate()
     {
-        Typecho_Plugin::factory('admin/write-js.php')->write = array('EditorEnhancement_Plugin', 'injectScript');
+        Typecho_Plugin::factory('10x/write-js.php')->write = array('EditorEnhancement_Plugin', 'injectScript');
     }
     
     /**
@@ -44,11 +44,12 @@ class EditorEnhancement_Plugin implements Typecho_Plugin_Interface
     public static function config(Typecho_Widget_Helper_Form $form)
     {
     	/** 编辑菜单快捷键设置 */
-        $shortcuts = new Typecho_Widget_Helper_Form_Element_Checkbox('开启快捷键', array(
-            "kSave" => "ctrl+s 保存草稿",
-            "kSubmit" => "ctrl+Enter 发布文章"
+        $shortcuts = new Typecho_Widget_Helper_Form_Element_Checkbox('shortcuts', array(
+            "keySave"=>"Ctrl+S: save draft",
+            "keySubmit"=>"Ctrl+Enter: publish post"
         ));
-        $form->addInput($shortcuts);
+        $shortcuts->value(array('keySave', 'keySubmit'));
+        $form->addInput($shortcuts->multiMode());
     }
     
     /**
@@ -70,6 +71,20 @@ class EditorEnhancement_Plugin implements Typecho_Plugin_Interface
      */
     public static function injectScript()
     {
-    	echo '<script src="'. Helper::options()->pluginUrl . '/EditorEnhancement/editorEnhancement.min.js"></script>';
+        $shorts = Helper::options()->plugin('EditorEnhancement')->shortcuts;
+    	echo '<script src="'. Helper::options()->pluginUrl . '/EditorEnhancement/editorEnhancement.js"></script>';
+        $shortsStr = '';
+        if (current($shorts)) {
+            $shortsStr .= '"' . htmlspecialchars(current($shorts));
+        }
+        while($cur = next($shorts)) {
+            $shortsStr .= '" ,"' . htmlspecialchars(current($shorts));
+        }
+        if ($shortsStr !== '') {
+            $shortsStr .= '"';
+        }
+        echo '<script type="text/javascript">$(function() {_rdp_.EditorEnhancement.enableShortcuts([' .
+            $shortsStr .
+            ']);})</script>';
     }
 }
