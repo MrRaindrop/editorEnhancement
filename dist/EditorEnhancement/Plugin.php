@@ -1,12 +1,12 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * EditorEnhancement
+ * 编辑器增强插件
  * 
- * @package EditorEnhancement 
+ * @package EditorEnhancement
  * @author Mr.Raindrop
  * @version 0.1.0
- * @link http://www.mrraindrop.com
+ * @link https://github.com/MrRaindrop/editorEnhancement
  */
 class EditorEnhancement_Plugin implements Typecho_Plugin_Interface
 {
