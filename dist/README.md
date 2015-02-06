@@ -15,6 +15,6 @@ enhancement of typecho's default editor（typecho编辑器增强插件）
 
 ### 使用
 
-1. 直接拷贝dist/目录内的EditorEnhancement文件夹到typecho的usr/Plugin目录下
-2. 进入插件管理界面，即可看到新增的EditorEnhancement插件，启用即可
-3. 在插件的设置面板里，可以勾选要使用的快捷键，不要的去掉就可以了
+1. 直接拷贝``dist/``目录内的``dist/EditorEnhancement``文件夹到typecho的``usr/Plugin``目录下
+2. 进入插件管理界面，即可看到新增的EditorEnhancement插件，``启用``即可
+3. 在插件的``设置``面板里，可以勾选要使用的快捷键，不要的去掉就可以了
