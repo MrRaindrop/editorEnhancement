@@ -83,7 +83,7 @@ class EditorEnhancement_Plugin implements Typecho_Plugin_Interface
         if ($shortsStr !== '') {
             $shortsStr .= '"';
         }
-        echo '<script type="text/javascript">$(function() {_rdp_.EditorEnhancement.enableShortcuts([' .
+        echo '<script type="text/javascript">$(function() {window._rdp_.EditorEnhancement.enableShortcuts([' .
             $shortsStr .
             ']);})</script>';
     }
