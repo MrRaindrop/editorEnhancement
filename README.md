@@ -1,6 +1,6 @@
 # EditorEnhancement
 
-enhancement of typecho's default editor（typecho编辑器增强插件）
+typecho编辑器增强插件
 
 ### 功能
 
