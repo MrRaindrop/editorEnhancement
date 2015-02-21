@@ -18,6 +18,5 @@
 		"type": "git",
 		"url": "https://github.com/MrRaindrop/editorEnhancement.git"
 	},
-	"description": "enhancement for typecho editor",
-	"version": "0.1.0"
+	"description": "enhancement for typecho editor"
 }
